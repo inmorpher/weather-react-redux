@@ -1,0 +1,24 @@
+.wind-image {
+  position: relative;
+  height: 150px;
+}
+.wind-face {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.wind-arrow {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+  .wind-image {
+    height: 115px;
+  }
+}

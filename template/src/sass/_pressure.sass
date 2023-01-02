@@ -1,0 +1,20 @@
+.pressure
+    &-img
+        position: relative
+        height: 150px
+        width: 100%
+        & .bar-face
+            height: 100%
+            width: 100%
+            object-fit: contain
+        & .bar-arrow
+            height: 75%
+            position: absolute
+            object-fit: contain
+            transform-origin: bottom center
+            top: 0
+            left: 47%
+@media screen and (max-width: 768px)
+    .pressure
+        &-img
+            height: 115px

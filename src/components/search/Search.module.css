@@ -1,0 +1,90 @@
+.search {
+  grid-area: search;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: end;
+  z-index: 100;
+}
+.search form {
+  position: relative;
+  width: 75%;
+}
+.search form input {
+  padding: 5px 50px;
+  width: 100%;
+  font-size: 1.5rem;
+  outline: none;
+  text-align: right;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  background: var(--gradient-bg);
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+.search form input::-webkit-input-placeholder {
+  color: var(--non-active-color);
+}
+.search form input::-moz-placeholder {
+  color: var(--non-active-color);
+}
+.search form input:-ms-input-placeholder {
+  color: var(--non-active-color);
+}
+.search form input::-ms-input-placeholder {
+  color: var(--non-active-color);
+}
+.search form input::placeholder {
+  color: var(--non-active-color);
+}
+.search form button {
+  width: 50px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.search-location-btn {
+  left: 0;
+  background: url("../img/app_icons/location.webp");
+  background-size: 35%;
+}
+.search-form-btn {
+  right: 0;
+  background: url("../img/app_icons/search.webp");
+  background-size: 50%;
+}
+@media screen and (max-width: 768px) {
+  .search {
+    font-size: 0.6rem;
+    position: sticky;
+    top: 10px;
+  }
+  .search form {
+    width: 100%;
+  }
+  .search form input {
+    background: none;
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--main-color);
+  }
+  .search-controls {
+    margin: 15px auto 0 auto;
+    background: none;
+    border: none;
+  }
+}

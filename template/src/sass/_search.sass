@@ -1,0 +1,50 @@
+.search
+    justify-content: space-between
+    flex-direction: column
+    align-items: end
+    z-index: 100
+    & form
+        position: relative
+        width: 75%
+        & input
+            padding: 5px 50px
+            width: 100%
+            font-size: 1.5rem
+            outline: none
+            text-align: right
+            color: var(--main-color)
+            &::placeholder
+                color: var( --non-active-color)
+        & button
+            width: 50px
+            height: 40px
+            position: absolute
+            top: 0
+            background-position: center
+            background-repeat: no-repeat
+    &-location-btn
+        left: 0
+        background: url('../img/app_icons/location.webp')
+        background-size: 35%
+    &-form-btn
+        right: 0
+        background: url('../img/app_icons/search.webp')
+        background-size: 50%
+    &-controls
+@media screen and (max-width: 768px)
+    .search
+        font-size: 0.6rem
+        position: sticky
+        top: 10px
+        & form
+            width: 100%
+            & input
+                background: none
+                backdrop-filter: blur(0)
+                border: none
+                border-radius: 0
+                border-bottom: 1px solid var(--main-color)
+        &-controls
+            margin: 15px auto 0 auto
+            background: none
+            border: none

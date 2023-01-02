@@ -1,0 +1,92 @@
+:root {
+  --main-color: rgba(255, 255, 255, 1);
+  --non-active-color: rgba(255, 255, 255, 0.48);
+  --gradient-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --font-regular: "Poppins-Thin";
+  --font-accent: "Poppins-Regular";
+}
+
+@font-face {
+  font-family: "Poppins-Thin";
+  src: url("../fonts/Poppins/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: regular;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: bold;
+  font-display: swap;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: rgb(23, 0, 255);
+  min-height: -webkit-fill-available;
+  font-family: var(--font-regular);
+  color: var(--main-color);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+img,
+picture {
+  display: block;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+span {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--non-active-color);
+  border-radius: 8px;
+  padding: 0 10px;
+}
+a.active {
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+a:hover {
+  color: var(--main-color);
+}

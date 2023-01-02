@@ -1,0 +1,71 @@
+.daily-forecast
+    &-list
+        height: 100%
+        padding: 15px
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+        li
+            width: 100%
+            display: flex
+            justify-content: space-between
+            align-items: center
+            cursor: pointer
+    &-weather
+    &-icon
+        width: 40
+        height: 40px
+        object-fit: contain
+    &-degree
+        font-family: 'Poppins-Regular'
+    &-more
+        height: 100%
+        justify-content: space-between
+        flex-direction: column
+        & table
+            & th, td
+                &:nth-child(1)
+                    color: var(--non-active-color)
+
+    & .weather
+        justify-content: space-around
+        align-items: center
+        & img
+            width: 75px
+            height: 75px
+        &-condition
+            text-align: left
+            font-size: 1.2rem
+            font-family: var(--font-accent)
+            color: var(--non-active-color)
+    & .conditions
+        justify-content: center
+        flex-wrap: wrap
+        vertical-align: middle
+        gap: 15px
+        & img
+            display: inline
+            opacity: 0.5
+            height: 12px
+            margin-right: 5px
+
+@media screen and (max-width: 768px)
+    .daily-forecast
+        height: 339px
+        font-size: 0.7rem
+        &-list
+            gap: 15px
+        &-icon
+            width: 20px
+            height: 20px
+        &-toggle
+            width: 10px
+            height: 10px
+        & .weather
+            text-align: left
+            img
+                width: 50px
+                height: 50px
+        & .conditions
+            & img
+                height: 8px

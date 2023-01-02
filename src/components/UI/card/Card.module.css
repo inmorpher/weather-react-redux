@@ -1,0 +1,44 @@
+.card {
+  position: relative;
+  padding-top: 25px;
+  min-height: 270px;
+}
+.card-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  font-size: 0.6rem;
+  color: var(--main-color);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.card-placeholder img {
+  margin: 0 5px 0 0;
+  height: 10px;
+  width: 15px;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.card-content {
+  padding-bottom: 10px;
+  height: 100%;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    min-height: 200px;
+  }
+}

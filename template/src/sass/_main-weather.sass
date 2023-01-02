@@ -1,0 +1,37 @@
+.main-forecast
+    width: 75%
+    padding: 5px
+    justify-content: space-around
+    align-content: center
+    font-size: 1.2rem
+    text-align: center
+    z-index: 100
+    &-location
+        flex-grow: 1
+        & span
+            display: block
+            font-family: var(--font-accent)
+            &:nth-child(2)
+                font-family: var(--font-regular)
+    & img
+        display: inline
+        height: 57px
+        width: 57px
+    &-degree
+        span
+            &:nth-child(1)
+                font-family: var(--font-accent)
+@media screen and (max-width: 768px)
+    .main-forecast
+        position: sticky
+        top: 100px
+        width: 100%
+        font-size: 0.9rem
+        border: none
+        background: none
+        backdrop-filter: blur(0)
+        & img
+            width: 48px
+            height: 48px
+        &-location
+            flex-grow: 0

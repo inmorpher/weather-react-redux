@@ -1,0 +1,22 @@
+.uv-index-scale {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid var(--main-color);
+}
+.uv-index-scale span {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .uv-index-scale {
+    height: 115px;
+    width: 115px;
+  }
+}

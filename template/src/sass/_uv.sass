@@ -1,0 +1,19 @@
+.uv-index
+    &-scale
+        position: relative
+        width: 150px
+        height: 150px
+        background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(255,0,0,0.49205619747899154) 100%)
+        border-radius: 50%
+        border: 1px solid var(--main-color)
+        & span
+            position: absolute
+            top: 50%
+            width: 100%
+            transform: translateY(-50%)
+            font-size: 3rem
+@media screen and (max-width: 768px)
+    .uv-index
+        &-scale
+            height: 115px
+            width: 115px

@@ -1,0 +1,29 @@
+.hourly-forecast {
+  padding-top: 25px;
+  font-size: 0.6rem;
+  overflow: hidden;
+}
+.hourly-forecast .time {
+  color: var(--non-active-color);
+}
+.hourly-forecast .degrees {
+  font-family: var(--font-accent);
+}
+.hourly-forecast ul {
+  gap: 5px;
+  overflow-y: scroll;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  padding-bottom: 10px;
+}
+.hourly-forecast ul li {
+  min-width: 70px;
+}
+.hourly-forecast ul li img {
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  -o-object-fit: contain;
+  object-fit: contain;
+}

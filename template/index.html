@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather title</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <script src="./src/script.js" defer></script>
+  </head>
+  <body>
+    <div class="bg-grad"></div>
+    <div class="sticky-frame bg-blur"></div>
+    <main class="content-grid test">
+      <!-- Main wether  -->
+      <div class="main-forecast grid-item bg-blur flex">
+        <div class="main-forecast-location">
+          <span class="main-forecast-city-name">Mexico city</span>
+          <span>11/12/2022</span>
+        </div>
+        <!-- <div class="div"></div> -->
+        <img src="./src/img/weather_status/02n.webp" alt="" />
+        <div class="main-forecast-degree">
+          <span>22°C</span>
+          <span>clouds</span>
+        </div>
+      </div>
+      <!-- Search item  -->
+      <div class="search grid-item flex">
+        <form action="#">
+          <input
+            type="text"
+            placeholder="type your city..."
+            name="weather search"
+            class="bg-blur"
+          />
+          <button class="search-location-btn"></button>
+          <button class="search-form-btn" type="submit"></button>
+        </form>
+        <div class="search-controls bg-blur">
+          <a href="" class="metric active">metric: °C, m/s</a>
+          <a href="" class="imperial">imperial: °F, mph</a>
+        </div>
+      </div>
+      <!-- Hourly forecast -->
+      <div class="hourly-forecast grid-item bg-blur">
+        <div class="card-placeholder flex">
+          <img src="./src/img/app_icons/hourly.webp" alt="" srcset="" />
+          <span>hourly forecast</span>
+        </div>
+        <ul class="flex">
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img
+              src="./src/img/weather_status/04n.webp"
+              class="place-holder-image"
+              alt=""
+            />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+          <li>
+            <span class="time">16:01</span>
+            <img src="./src/img/weather_status/04n.webp" alt="" />
+            <span class="degrees">22°C</span>
+            <span class="wind-direction">NW 12m/s</span>
+          </li>
+        </ul>
+      </div>
+      <!-- precipitation  -->
+      <div class="precipitation grid-item bg-blur card">
+        <div class="card-placeholder flex">
+          <img id="image" src="./src/img/app_icons/precipitation.webp" />
+          <span>precipitation next hour</span>
+        </div>
+        <img class="precipitation-img" src="./src/img/precip.png" alt="" />
+      </div>
+      <!-- wind -->
+      <div class="wind grid-item card bg-blur">
+        <div class="card-placeholder flex">
+          <img id="image" src="./src/img/app_icons/wind.webp" />
+          <span>wind</span>
+        </div>
+        <div class="card-content flex">
+          <div class="card-content-header">
+            <span class="wind-speed">10m/s</span>
+          </div>
+          <div class="wind-image card-content-main">
+            <img
+              class="wind-face"
+              src="./src/img/app_icons/wind_dir.webp"
+              alt=""
+            />
+            <img
+              class="wind-arrow"
+              src="./src/img/app_icons/wind_dir_arrow.webp"
+              alt=""
+              style="transform: rotate(120deg)"
+            />
+          </div>
+          <div class="card-content-footer">
+            <span class="gust-speed">gust: 14m/s</span>
+          </div>
+        </div>
+      </div>
+      <!-- Feeling  -->
+      <div class="feeling grid-itemgrid-item card bg-blur">
+        <div class="card-placeholder flex">
+          <img id="image" src="./src/img/app_icons/feels_like.webp" />
+          <span>feeling</span>
+        </div>
+        <div class="card-content flex">
+          <div class="card-content-header"></div>
+          <div class="card-content-main"><p>21C</p></div>
+          <div class="card-content-footer"><span>feels colder</span></div>
+        </div>
+      </div>
+      <!-- Daily -->
+      <div class="daily-forecast grid-item card bg-blur">
+        <div class="card-placeholder flex">
+          <img id="image" src="./src/img/app_icons/8day.webp" />
+          <span>8 days forecast</span>
+        </div>
+        <div class="daily-forecast-more flex">
+          <span class="date">Mon, dec 19</span>
+          <div class="weather flex">
+            <img src="./src/img/weather_status/10d.webp" alt="" srcset="" />
+            <div class="daily-forecast-more-main">
+              <span class="weather-condition">thunderstorm</span>
+              <span class="degree-description"
+                >this day high will be <strong>23C</strong>, low will be
+                <strong>7C</strong></span
+              >
+            </div>
+          </div>
+          <div class="conditions flex">
+            <span class="conditions-humidity"
+              ><img src="./src/img/app_icons/humidity.webp" alt="" />humidity:
+              80%</span
+            >
+            <span class="conditions-wind"
+              ><img src="./src/img/app_icons/wind.webp" alt="" />6.5 m/s
+              WE</span
+            >
+            <span class="conditions-pressure"
+              ><img
+                src="./src/img/app_icons/presure.webp"
+                alt=""
+              />1028hPa</span
+            >
+            <span class="conditions-uv"
+              ><img src="./src/img/app_icons/uv.webp" alt="" />UV: 10</span
+            >
+            <span class="conditions-dew">dew point: 7C</span>
+          </div>
+          <table>
+            <tr>
+              <th></th>
+              <th>Morning</th>
+              <th>Afternoon</th>
+              <th>Evening</th>
+              <th>Night</th>
+            </tr>
+            <tr>
+              <td>temperature</td>
+              <td>8C</td>
+              <td>8C</td>
+              <td>8C</td>
+              <td>8C</td>
+            </tr>
+            <tr>
+              <td>feels like</td>
+              <td>8C</td>
+              <td>8C</td>
+              <td>8C</td>
+              <td>8C</td>
+            </tr>
+          </table>
+          <span>sunrise: 06:15 sunset: 18:01</span>
+        </div>
+
+        <!-- <ul class="daily-forecast-list">
+          <li tabindex="1" type="link">
+            <span class="daily-forecast-date">Mon, dec 19</span>
+
+            <img
+              class="daily-forecast-icon"
+              src="./src/img/weather_status/02n.webp"
+              alt=""
+              srcset=""
+            />
+            <span class="daily-forecast-degree">22/13 C</span>
+            <span class="daily-forecast-status">thunderstorm</span>
+            <img
+              class="daily-forecast-toggle"
+              src="./src/img/app_icons/trinagle.svg"
+              alt=""
+              srcset=""
+            />
+          </li>
+          <li tabindex="1" type="link">
+            <span class="daily-forecast-date">Mon, dec 19</span>
+
+            <img
+              class="daily-forecast-icon"
+              src="./src/img/weather_status/02n.webp"
+              alt=""
+              srcset=""
+            />
+            <span class="daily-forecast-degree">22/13 C</span>
+            <span class="daily-forecast-status">thunderstorm</span>
+            <img
+              class="daily-forecast-toggle"
+              src="./src/img/app_icons/trinagle.svg"
+              alt=""
+              srcset=""
+            />
+          </li>
+          <li tabindex="1" type="link">
+            <span class="daily-forecast-date">Mon, dec 19</span>
+
+            <img
+              class="daily-forecast-icon"
+              src="./src/img/weather_status/02n.webp"
+              alt=""
+              srcset=""
+            />
+            <span class="daily-forecast-degree">22/13 C</span>
+            <span class="daily-forecast-status">thunderstorm</span>
+            <img
+              class="daily-forecast-toggle"
+              src="./src/img/app_icons/trinagle.svg"
+              alt=""
+              srcset=""
+            />
+          </li>
+          <li tabindex="1" type="link">
+            <span class="daily-forecast-date">Mon, dec 19</span>
+
+            <img
+              class="daily-forecast-icon"
+              src="./src/img/weather_status/02n.webp"
+              alt=""
+              srcset=""
+            />
+            <span class="daily-forecast-degree">22/13 C</span>
+            <span class="daily-forecast-status">thunderstorm</span>
+            <img
+              class="daily-forecast-toggle"
+              src="./src/img/app_icons/trinagle.svg"
+              alt=""
+              srcset=""
+            />
+          </li>
+          <li tabindex="1" type="link">
+            <span class="daily-forecast-date">Mon, dec 19</span>
+
+            <img
+              class="daily-forecast-icon"
+              src="./src/img/weather_status/02n.webp"
+              alt=""
+              srcset=""
+            />
+            <span class="daily-forecast-degree">22/13 C</span>
+            <span class="daily-forecast-status">thunderstorm</span>
+            <img
+              class="daily-forecast-toggle"
+              src="./src/img/app_icons/trinagle.svg"
+              alt=""
+              srcset=""
+            />
+          </li>
+          <li tabindex="1" type="link">
+            <span class="daily-forecast-date">Mon, dec 19</span>
+
+            <img
+              class="daily-forecast-icon"
+              src="./src/img/weather_status/02n.webp"
+              alt=""
+              srcset=""
+            />
+            <span class="daily-forecast-degree">22/13 C</span>
+            <span class="daily-forecast-status">thunderstorm</span>
+            <img
+              class="daily-forecast-toggle"
+              src="./src/img/app_icons/trinagle.svg"
+              alt=""
+              srcset=""
+            />
+          </li>
+          <li tabindex="1" type="link">
+            <span class="daily-forecast-date">Mon, dec 19</span>
+
+            <img
+              class="daily-forecast-icon"
+              src="./src/img/weather_status/02n.webp"
+              alt=""
+              srcset=""
+            />
+            <span class="daily-forecast-degree">22/13 C</span>
+            <span class="daily-forecast-status">thunderstorm</span>
+            <img
+              class="daily-forecast-toggle"
+              src="./src/img/app_icons/trinagle.svg"
+              alt=""
+              srcset=""
+            />
+          </li>
+          <li tabindex="1" type="link">
+            <span class="daily-forecast-date">Mon, dec 19</span>
+
+            <img
+              class="daily-forecast-icon"
+              src="./src/img/weather_status/02n.webp"
+              alt=""
+              srcset=""
+            />
+            <span class="daily-forecast-degree">22/13 C</span>
+            <span class="daily-forecast-status">thunderstorm</span>
+            <img
+              class="daily-forecast-toggle"
+              src="./src/img/app_icons/trinagle.svg"
+              alt=""
+              srcset=""
+            />
+          </li>
+        </ul> -->
+      </div>
+      <!-- UV-index -->
+      <div class="uv-index grid-item card bg-blur">
+        <div class="card-placeholder flex">
+          <img id="image" src="./src/img/app_icons/uv.webp" />
+          <span>UV index</span>
+        </div>
+        <div class="card-content flex">
+          <div class="card-content-header"></div>
+          <div class="card-content-main">
+            <div class="uv-index-scale">
+              <span>10</span>
+            </div>
+          </div>
+          <div class="card-content-footer">
+            <span>very high</span>
+          </div>
+        </div>
+      </div>
+      <!-- Pressure  -->
+      <div class="pressure grid-item card padding bg-blur">
+        <div class="card-placeholder flex">
+          <img id="image" src="./src/img/app_icons/presure.webp" />
+          <span>pressure</span>
+        </div>
+        <div class="card-content flex">
+          <div class="card-content-header">1022hPa</div>
+          <div class="card-content-main">
+            <div class="pressure-img">
+              <img
+                class="bar-face"
+                src="./src/img/app_icons/bar.webp"
+                alt=""
+                srcset=""
+              />
+              <img
+                class="bar-arrow"
+                src="./src/img/app_icons/bar-arrow.webp"
+                style="transform: rotate(45deg)"
+              />
+            </div>
+          </div>
+          <div class="card-content-footer"></div>
+        </div>
+      </div>
+      <!-- Humidity  -->
+      <div class="humidity grid-item card bg-blur">
+        <div class="card-placeholder flex">
+          <img id="image" src="./src/img/app_icons/humidity.webp" />
+          <span>humidity</span>
+        </div>
+        <div class="card-content flex">
+          <div class="card-content-header"></div>
+          <div class="card-content-main">
+            <p>85%</p>
+          </div>
+          <div class="card-content-footer">
+            <span>dew point 7C</span>
+          </div>
+        </div>
+      </div>
+      <!-- Sun-position -->
+      <div class="sun-position grid-item card bg-blur">
+        <div class="card-placeholder flex">
+          <img id="image" src="./src/img/app_icons/sun.webp" />
+          <span>sun position</span>
+        </div>
+        <div class="card-content flex">
+          <div class="card-content-header"></div>
+          <div class="card-content-main">
+            <span>Sunrise: 06:14</span>
+            <span>Sunset: 07:12</span>
+          </div>
+          <div class="card-content-footer"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
