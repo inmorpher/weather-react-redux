@@ -8,7 +8,7 @@ import cardStyles from "../UI/card/Card.module.css";
 
 const SunPosition = () => {
   const { sunrise, sunset } = useSelector(getSunPosition);
-
+  const timeOffset = useSelector((state) => state.weather.data.timezone_offset);
   return (
     <div
       className={`sun-position ${globalStyles["grid-item"]} ${cardStyles.card} ${globalStyles["bg-blur"]}`}
@@ -20,8 +20,8 @@ const SunPosition = () => {
       <div className={`${cardStyles["card-content"]} ${globalStyles.flex}`}>
         <div></div>
         <div>
-          <span>Sunrise: {getTime(sunrise, "hours")}</span>
-          <span>Sunset: {getTime(sunset, "hours")}</span>
+          <span>Sunrise: {getTime(sunrise, "hours", timeOffset)}</span>
+          <span>Sunset: {getTime(sunset, "hours", timeOffset)}</span>
         </div>
         <div></div>
       </div>

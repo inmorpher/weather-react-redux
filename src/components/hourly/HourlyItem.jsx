@@ -10,7 +10,9 @@ const HourlyItem = (props) => {
   const wind = getMetricWind(props.wind_speed, props.measurement);
   return (
     <li>
-      <span className={styles.time}>{getTime(props.dt, "hours")}</span>
+      <span className={styles.time}>
+        {getTime(props.dt, "hours", props.offset)}
+      </span>
       <img src={`/img/weather_status/${props.weather[0].icon}.webp`} />
       <span className={styles.degrees}>{temp}</span>
       <span className={styles["wind-direction"]}>

@@ -358,9 +358,11 @@ const Precipitation = () => {
 
     start();
   };
+  let noData = "";
 
   useEffect(() => {
     data && wetherPrecipitationCanvas(canvasId.current, data);
+    if (!data) noData = <p>no precipitation data</p>;
   }, []);
 
   return (
@@ -375,6 +377,7 @@ const Precipitation = () => {
           <span>precipitation next hour</span>
         </div>
         <canvas ref={canvasId}></canvas>
+        {!data && <p className={styles["no-data"]}>no precipitation data</p>}
       </div>
     </>
   );

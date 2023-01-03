@@ -1,6 +1,17 @@
+.precipitation {
+  position: relative;
+}
+
 .precipitation canvas {
   width: 460px;
   height: 250px;
+}
+
+.precipitation .no-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 768px) {

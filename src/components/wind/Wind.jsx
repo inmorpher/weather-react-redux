@@ -39,7 +39,7 @@ const Wind = () => {
           />
         </div>
         <div>
-          <span className={styles["gust-speed"]}>gust: {gust}</span>
+          {gust && <span className={styles["gust-speed"]}>gust: {gust}</span>}
         </div>
       </div>
     </div>

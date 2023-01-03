@@ -7,9 +7,11 @@ import globalStyles from "../../Global.module.css";
 import cardStyles from "../UI/card/Card.module.css";
 
 import HourlyItem from "./HourlyItem";
+
 const Hourly = () => {
   const hourly = useSelector(getHourly);
   const measurement = useSelector(getMeasurement);
+  const timeOffset = useSelector((state) => state.weather.data.timezone_offset);
   return (
     <div
       className={`${styles["hourly-forecast"]} ${globalStyles["grid-item"]} ${globalStyles["bg-blur"]}`}
@@ -20,7 +22,12 @@ const Hourly = () => {
       </div>
       <ul className={globalStyles.flex}>
         {hourly.map((elem) => (
-          <HourlyItem key={elem.dt} {...elem} measurement={measurement} />
+          <HourlyItem
+            key={elem.dt}
+            {...elem}
+            measurement={measurement}
+            offset={timeOffset}
+          />
         ))}
       </ul>
     </div>

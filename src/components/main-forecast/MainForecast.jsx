@@ -15,8 +15,9 @@ const MainForecast = () => {
   const mainData = useSelector(getCurrent);
   const locationName = useSelector(getLocationGeneral);
   const measurement = useSelector(getMeasurement);
+  const timeOffset = useSelector((state) => state.weather.data.timezone_offset);
 
-  const currentDate = getTime(mainData.dt);
+  const currentDate = getTime(mainData.dt, "full", timeOffset);
   const currentTemp = getMetricTemp(mainData.temp, measurement);
   const currentIcon = `./img/weather_status/${mainData.weather[0].icon}.webp`;
   const currentCondition = mainData.weather[0].main.toLowerCase();

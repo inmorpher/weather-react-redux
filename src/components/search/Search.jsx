@@ -29,6 +29,21 @@ const Search = () => {
     dispatch(fetchWeather({ value: inputRef.current.value, type: "direct" }));
     inputRef.current.value = "";
   };
+
+  const geoLocationHandler = (event) => {
+    event.preventDefault();
+    console.log(1);
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) =>
+        dispatch(
+          fetchWeather({
+            value: [position.coords.latitude, position.coords.longitude],
+            type: "reverse",
+          })
+        )
+      );
+    }
+  };
   return (
     //    Search item
     <div
@@ -41,7 +56,11 @@ const Search = () => {
           name="weather search"
           ref={inputRef}
         />
-        <button className={styles["search-location-btn"]}></button>
+        <button
+          className={styles["search-location-btn"]}
+          onClick={geoLocationHandler}
+          type="none"
+        ></button>
         <button className={styles["search-form-btn"]} type="submit"></button>
       </form>
       <div

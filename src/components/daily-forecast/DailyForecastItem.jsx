@@ -6,7 +6,8 @@ import { getMeasurement } from "../../store/weatherDataSlice";
 import style from "./DailyForecast.module.css";
 const DailyForecastItem = (props) => {
   const measurement = useSelector(getMeasurement);
-  const data = getTime(props.dt, "data");
+  const timeOffset = useSelector((state) => state.weather.data.timezone_offset);
+  const data = getTime(props.dt, "data", timeOffset);
 
   const tempMax = getMetricTemp(props.temp.max, measurement);
   const tempMin = getMetricTemp(props.temp.min, measurement);

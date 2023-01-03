@@ -15,24 +15,15 @@ import Pressure from "./components/pressure/Pressure";
 import Humidity from "./components/humidity/Humidity";
 import SunPosition from "./components/sun-position/SunPosition";
 import BackgroundLayout from "./components/UI/backgroundLayout/BackgroundLayout";
+import Loading from "./components/UI/loading/Loading";
 
 const App = () => {
-  const weatherStatus = useSelector((state) => state.weather);
-  const dispatch = useDispatch();
-
   const dataStatus = useSelector((state) => state.weather.loading);
-  // useEffect(() => {
-  //   dispatch(fetchWeather({ value: "odesa", type: "direct" }));
-  // }, []);
-
-  console.log(Boolean(weatherStatus.data));
-  console.log(dataStatus);
 
   let content;
 
   if (dataStatus === "idle") content = <Search />;
-  // if (Boolean(weatherStatus)) content = <p>data here</p>;
-
+  if (dataStatus === "loading") content = <Loading />;
   if (dataStatus === "loaded") {
     content = (
       <>
