@@ -8,6 +8,7 @@ import { getMetricWind } from "../../func/getMetricWind";
 
 const Wind = () => {
   const { windSpeed, windDegree, windGust } = useSelector(getWind);
+  console.log(1);
   const measurement = useSelector(getMeasurement);
   console.log(Boolean(windGust));
   const speed = getMetricWind(windSpeed, measurement);
