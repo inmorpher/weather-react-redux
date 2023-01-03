@@ -17,10 +17,10 @@ export const fetchWeather = createAsyncThunk("/weather", async (data) => {
   if (type === "reverse") {
     const LAT = value[0];
     const LONG = value[1];
-    GENERAL_API_REQUEST = `http://api.openweathermap.org/geo/1.0/reverse?lat=${LAT}&lon=${LONG}&limit=3&appid=${API_KEY}`;
+    GENERAL_API_REQUEST = `https://api.openweathermap.org/geo/1.0/reverse?lat=${LAT}&lon=${LONG}&limit=3&appid=${API_KEY}`;
   } else if (type === "direct") {
     const cityName = value;
-    GENERAL_API_REQUEST = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=3&appid=${API_KEY}`;
+    GENERAL_API_REQUEST = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=3&appid=${API_KEY}`;
   }
 
   const generalDataRes = await fetch(GENERAL_API_REQUEST);
