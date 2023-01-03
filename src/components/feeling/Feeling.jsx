@@ -4,14 +4,18 @@ import styles from "./Feeling.module.css";
 import globalStyles from "../../Global.module.css";
 import cardStyles from "../UI/card/Card.module.css";
 import { useSelector } from "react-redux";
-import { getFeelsLike } from "../../store/weatherDataSlice";
+import { getFeelsLike, getMeasurement } from "../../store/weatherDataSlice";
+import { getMetricTemp } from "../../func/getMetricTemp";
 ("card-placeholder flex");
 const Feeling = () => {
   const { temp, feeling } = useSelector(getFeelsLike);
+  const measurement = useSelector(getMeasurement);
+
   let feelingDesc = "";
   if (feeling > temp) feelingDesc = "feels wormer";
   else if (feeling < temp) feelingDesc = "feels colder";
   else feelingDesc = "feels same";
+
   return (
     <div
       className={`${styles.feeling} ${globalStyles["grid-item"]} ${cardStyles.card} ${globalStyles["bg-blur"]}`}
@@ -23,7 +27,7 @@ const Feeling = () => {
       <div className={`${cardStyles["card-content"]} ${globalStyles.flex}`}>
         <div></div>
         <div>
-          <p>{feeling}C</p>
+          <p>{getMetricTemp(feeling, measurement)}</p>
         </div>
         <div>
           <span>{feelingDesc}</span>

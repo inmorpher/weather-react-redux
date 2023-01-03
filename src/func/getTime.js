@@ -25,6 +25,7 @@ const getTime = (date, value = "full") => {
 
   if (value === "full") return `${month} ${day}, ${hours}:${minutes}`;
   if (value === "hours") return `${hours}:${minutes}`;
+  if (value === "data") return `${month} ${day}`;
 };
 
 export default getTime;

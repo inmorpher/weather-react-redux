@@ -1,11 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { getMetricTemp } from "../../func/getMetricTemp";
 import getTime from "../../func/getTime";
+import { getMeasurement } from "../../store/weatherDataSlice";
 import style from "./DailyForecast.module.css";
 const DailyForecastItem = (props) => {
-  const data = getTime(props.dt);
+  const measurement = useSelector(getMeasurement);
+  const data = getTime(props.dt, "data");
 
-  const tempMax = Math.ceil(props.temp.max);
-  const tempMin = Math.ceil(props.temp.min);
+  const tempMax = getMetricTemp(props.temp.max, measurement);
+  const tempMin = getMetricTemp(props.temp.min, measurement);
   const condition = props.weather[0].main.toLowerCase();
   const icon = props.weather[0].icon;
 
@@ -19,7 +23,7 @@ const DailyForecastItem = (props) => {
           alt={condition}
         />
         <span className={style["daily-forecast-degree"]}>
-          {tempMax}/{tempMin}°C
+          {tempMax}/{tempMin}
         </span>
         <span className={style["daily-forecast-status"]}>{condition}</span>
         <img

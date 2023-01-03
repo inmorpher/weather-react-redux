@@ -14,19 +14,29 @@ import Uv from "./components/uv/Uv";
 import Pressure from "./components/pressure/Pressure";
 import Humidity from "./components/humidity/Humidity";
 import SunPosition from "./components/sun-position/SunPosition";
+import BackgroundLayout from "./components/UI/backgroundLayout/BackgroundLayout";
 
 const App = () => {
   const weatherStatus = useSelector((state) => state.weather);
   const dispatch = useDispatch();
 
-  const dataLoaded = Object.keys(weatherStatus.data).length > 0;
-  useEffect(() => {
-    dispatch(fetchWeather());
-  }, []);
+  const dataStatus = useSelector((state) => state.weather.loading);
+  // useEffect(() => {
+  //   dispatch(fetchWeather({ value: "odesa", type: "direct" }));
+  // }, []);
 
-  return (
-    <>
-      {dataLoaded && !weatherStatus.loading && (
+  console.log(Boolean(weatherStatus.data));
+  console.log(dataStatus);
+
+  let content;
+
+  if (dataStatus === "idle") content = <Search />;
+  // if (Boolean(weatherStatus)) content = <p>data here</p>;
+
+  if (dataStatus === "loaded") {
+    content = (
+      <>
+        <BackgroundLayout />
         <GridWrapper>
           <MainForecast />
           <Search />
@@ -40,9 +50,10 @@ const App = () => {
           <Humidity />
           <SunPosition />
         </GridWrapper>
-      )}
-    </>
-  );
+      </>
+    );
+  }
+  return content;
 };
 
 export default App;

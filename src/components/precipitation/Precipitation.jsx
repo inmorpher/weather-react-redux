@@ -360,7 +360,7 @@ const Precipitation = () => {
   };
 
   useEffect(() => {
-    wetherPrecipitationCanvas(canvasId.current, data);
+    data && wetherPrecipitationCanvas(canvasId.current, data);
   }, []);
 
   return (

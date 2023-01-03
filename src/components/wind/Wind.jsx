@@ -3,11 +3,15 @@ import styles from "./Wind.module.css";
 import globalStyles from "../../Global.module.css";
 import cardStyles from "../UI/card/Card.module.css";
 import { useSelector } from "react-redux";
-import { getWind } from "../../store/weatherDataSlice";
+import { getMeasurement, getWind } from "../../store/weatherDataSlice";
+import { getMetricWind } from "../../func/getMetricWind";
 
 const Wind = () => {
   const { windSpeed, windDegree, windGust } = useSelector(getWind);
-
+  const measurement = useSelector(getMeasurement);
+  console.log(Boolean(windGust));
+  const speed = getMetricWind(windSpeed, measurement);
+  const gust = windGust && getMetricWind(windGust, measurement);
   return (
     <div
       className={`${globalStyles["grid-item"]} ${cardStyles.card} ${globalStyles["bg-blur"]}`}
@@ -18,7 +22,7 @@ const Wind = () => {
       </div>
       <div className={`${cardStyles["card-content"]} ${globalStyles.flex}`}>
         <div>
-          <span className={styles["wind-speed"]}>{windSpeed}m/s</span>
+          <span className={styles["wind-speed"]}>{speed}</span>
         </div>
         <div className={`${styles["wind-image"]}`}>
           <img
@@ -34,7 +38,7 @@ const Wind = () => {
           />
         </div>
         <div>
-          <span className={styles["gust-speed"]}>gust: {windGust}m/s</span>
+          <span className={styles["gust-speed"]}>gust: {gust}</span>
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ const Uv = () => {
   const uvi = Math.ceil(useSelector(getUv));
 
   const uvGrade = [
+    { color: "transparent", value: "none" },
     { color: "#00DD00", value: "low" },
     { color: "#A8CD00", value: "low" },
     { color: "#DAC300", value: "moderate" },
@@ -34,13 +35,13 @@ const Uv = () => {
         <div>
           <div
             className={styles["uv-index-scale"]}
-            style={{ backgroundColor: uvGrade[uvi - 1].color }}
+            style={{ backgroundColor: uvGrade[uvi].color }}
           >
             <span>{uvi}</span>
           </div>
         </div>
         <div>
-          <span>{uvGrade[uvi - 1].value}</span>
+          <span>{uvGrade[uvi].value}</span>
         </div>
       </div>
     </div>

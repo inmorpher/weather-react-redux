@@ -1,5 +1,5 @@
 import React from "react";
-import { getHourly } from "../../store/weatherDataSlice";
+import { getHourly, getMeasurement } from "../../store/weatherDataSlice";
 import { useSelector } from "react-redux";
 
 import styles from "./Hourly.module.css";
@@ -9,7 +9,7 @@ import cardStyles from "../UI/card/Card.module.css";
 import HourlyItem from "./HourlyItem";
 const Hourly = () => {
   const hourly = useSelector(getHourly);
-
+  const measurement = useSelector(getMeasurement);
   return (
     <div
       className={`${styles["hourly-forecast"]} ${globalStyles["grid-item"]} ${globalStyles["bg-blur"]}`}
@@ -20,7 +20,7 @@ const Hourly = () => {
       </div>
       <ul className={globalStyles.flex}>
         {hourly.map((elem) => (
-          <HourlyItem key={elem.dt} {...elem} />
+          <HourlyItem key={elem.dt} {...elem} measurement={measurement} />
         ))}
       </ul>
     </div>

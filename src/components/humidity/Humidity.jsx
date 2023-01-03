@@ -5,10 +5,14 @@ import globalStyles from "../../Global.module.css";
 import cardStyles from "../UI/card/Card.module.css";
 
 import { useSelector } from "react-redux";
-import { getHumidity } from "../../store/weatherDataSlice";
+import { getHumidity, getMeasurement } from "../../store/weatherDataSlice";
+import { getMetricTemp } from "../../func/getMetricTemp";
 
 const Humidity = () => {
+  const measurement = useSelector(getMeasurement);
   const { humidity, dewPoint } = useSelector(getHumidity);
+
+  const metricDewPoint = getMetricTemp(dewPoint, measurement);
   return (
     <div
       className={`${styles.humidity} ${globalStyles["grid-item"]} ${cardStyles.card} ${globalStyles["bg-blur"]}`}
@@ -23,7 +27,7 @@ const Humidity = () => {
           <p>{humidity}%</p>
         </div>
         <div>
-          <span>dew point: {Math.ceil(dewPoint)}°C</span>
+          <span>dew point: {metricDewPoint}</span>
         </div>
       </div>
     </div>
