@@ -32,7 +32,7 @@ const Search = () => {
 
   const geoLocationHandler = (event) => {
     event.preventDefault();
-    console.log(1);
+    console.log("nav");
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) =>
         dispatch(
@@ -56,12 +56,13 @@ const Search = () => {
           name="weather search"
           ref={inputRef}
         />
+
+        <button className={styles["search-form-btn"]} type="submit"></button>
         <button
           className={styles["search-location-btn"]}
           onClick={geoLocationHandler}
           type="none"
         ></button>
-        <button className={styles["search-form-btn"]} type="submit"></button>
       </form>
       <div
         className={`${styles["search-controls"]} ${globalStyles["bg-blur"]}`}

@@ -37,6 +37,19 @@
   align-items: center;
 }
 
+.card-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  width: 80px;
+  padding: 10px 0;
+}
+.card-close img {
+  margin: 0 auto;
+  transform: rotate(180deg);
+}
+
 @media screen and (max-width: 768px) {
   .card {
     min-height: 200px;

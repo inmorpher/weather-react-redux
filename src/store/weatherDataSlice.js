@@ -25,7 +25,6 @@ export const fetchWeather = createAsyncThunk("/weather", async (data) => {
 
   const generalDataRes = await fetch(GENERAL_API_REQUEST);
   const generalData = await generalDataRes.json();
-  console.log(generalData[0].lat, generalData[0].lon);
   const latitude = generalData[0].lat;
   const longitude = generalData[0].lon;
   const WEATHER_API_REQUEST = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`;

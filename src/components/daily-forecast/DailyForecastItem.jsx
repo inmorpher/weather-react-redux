@@ -16,7 +16,7 @@ const DailyForecastItem = (props) => {
 
   return (
     <>
-      <li tabIndex="1" type="link">
+      <li tabIndex="1" type="link" onClick={() => props.func(props.dataOrder)}>
         <span className={style["daily-forecast-date"]}>{data}</span>
         <img
           className={style["daily-forecast-icon"]}
