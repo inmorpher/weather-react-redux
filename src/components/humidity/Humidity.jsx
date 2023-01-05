@@ -1,36 +1,33 @@
-import React from "react";
-
-import styles from "./Humidity.module.css";
-import globalStyles from "../../Global.module.css";
-import cardStyles from "../UI/card/Card.module.css";
-
 import { useSelector } from "react-redux";
-import { getHumidity, getMeasurement } from "../../store/weatherDataSlice";
+import { getHumidity } from "../../store/weatherDataSlice";
 import { getMetricTemp } from "../../func/getMetricTemp";
 
+import Card from "../UI/card/Card";
+
+import styles from "./Humidity.module.css";
+
 const Humidity = () => {
-  const measurement = useSelector(getMeasurement);
-  const { humidity, dewPoint } = useSelector(getHumidity);
+  const { humidity, dewPoint, measurement } = useSelector(getHumidity);
 
   const metricDewPoint = getMetricTemp(dewPoint, measurement);
+
+  const cardProps = {
+    type: "humidity",
+    classStyle: styles.humidity,
+    title: "humidity",
+    placeholder: true,
+    structure: "column",
+  };
   return (
-    <div
-      className={`${styles.humidity} ${globalStyles["grid-item"]} ${cardStyles.card} ${globalStyles["bg-blur"]}`}
-    >
-      <div className={`${cardStyles["card-placeholder"]} ${globalStyles.flex}`}>
-        <img id="image" src="/img/app_icons/humidity.webp" alt="humidity" />
-        <span>humidity</span>
+    <Card {...cardProps}>
+      <div></div>
+      <div>
+        <p>{humidity}%</p>
       </div>
-      <div className={`${cardStyles["card-content"]} ${globalStyles.flex}`}>
-        <div></div>
-        <div>
-          <p>{humidity}%</p>
-        </div>
-        <div>
-          <span>dew point: {metricDewPoint}</span>
-        </div>
+      <div>
+        <span>dew point: {metricDewPoint}</span>
       </div>
-    </div>
+    </Card>
   );
 };
 

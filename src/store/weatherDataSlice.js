@@ -8,8 +8,6 @@ const initialState = {
 };
 
 export const fetchWeather = createAsyncThunk("/weather", async (data) => {
-  console.log(data);
-
   const { value, type } = data;
   const API_KEY = "35769c5f7789446e56583879cfcce960";
 
@@ -50,44 +48,106 @@ export const weatherDataSlice = createSlice({
       state.data = action.payload;
       state.error = "";
       state.loading = "loaded";
+      document.body.style.backgroundColor =
+        "linear-gradient(180deg, rgba(23,0,255,1) 0%, rgba(255,57,0,1) 100%)";
     });
   },
 });
 // Actions
+
 export const getMeasurement = (state) => state.weather.measurement;
-export const getCurrent = (state) => state.weather.data.current;
-export const getLocationGeneral = (state) => {
-  return `${state.weather.data.name}, ${state.weather.data.country}`;
+/* 
+  Getting:
+   Current data, Location name, Measurement, Timezone offset
+  for Main block
+*/
+export const getMain = (state) => {
+  return {
+    current: state.weather.data.current,
+    locationName: `${state.weather.data.name}, ${state.weather.data.country}`,
+    measurement: state.weather.measurement,
+    timeOffset: state.weather.data.timezone_offset,
+  };
 };
-export const getHourly = (state) => state.weather.data.hourly;
+/* 
+  Getting:
+  Hourly, Measurement, Timezone offset
+  for Hourly block
+*/
+export const getHourly = (state) => {
+  return {
+    hourly: state.weather.data.hourly,
+    measurement: state.weather.measurement,
+    timeOffset: state.weather.data.timezone_offset,
+  };
+};
+/* 
+  Getting:
+  Precipitation 
+  for Precipitation block
+*/
 export const getPrecipitation = (state) => state.weather.data.minutely;
+/* 
+  Getting:
+  Wind speed, Wind gust, Wind degree, Measurement 
+  for Wind block
+*/
 export const getWind = (state) => {
   return {
     windSpeed: state.weather.data.current.wind_speed,
     windDegree: state.weather.data.current.wind_deg,
     windGust: state.weather.data.current.wind_gust,
+    measurement: state.weather.measurement,
   };
 };
+/*  
+    Getting :
+    Temperature, Feeling temperature, Measurement
+    for Feeling block 
+*/
 export const getFeelsLike = (state) => {
   return {
     temp: state.weather.data.current.temp,
     feeling: state.weather.data.current.feels_like,
+    measurement: state.weather.measurement,
   };
 };
 
 export const getDaily = (state) => state.weather.data.daily;
-export const getUv = (state) => state.weather.data.current.uvi;
+/*  
+    Getting :
+    Pressure
+    for Pressure block 
+*/
+export const getUv = (state) => state.weather.data.current.uvi.toFixed("0");
+/*  
+    Getting :
+    Pressure
+    for Pressure block 
+*/
 export const getPressure = (state) => state.weather.data.current.pressure;
+/*  
+    Getting :
+    Humidity, Dew point, Measurement
+    for Humidity block 
+*/
 export const getHumidity = (state) => {
   return {
     humidity: state.weather.data.current.humidity,
     dewPoint: state.weather.data.current.dew_point,
+    measurement: state.weather.measurement,
   };
 };
+/*  
+    Getting :
+    Sunrise, Sunset, Measurement
+    for Sun position block 
+*/
 export const getSunPosition = (state) => {
   return {
     sunrise: state.weather.data.current.sunrise,
     sunset: state.weather.data.current.sunset,
+    timeOffset: state.weather.data.timezone_offset,
   };
 };
 

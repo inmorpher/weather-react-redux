@@ -4,16 +4,15 @@ import { getDaily } from "../../store/weatherDataSlice";
 import { useState } from "react";
 import styles from "./DailyForecast.module.css";
 import cardStyles from "../UI/card/Card.module.css";
-import globalStyles from "../../Global.module.css";
 
 import DailyForecastItem from "./DailyForecastItem";
 import DailyForecastFull from "./DailyForecastFull";
+import Card from "../UI/card/Card";
 
 const DailyForecast = () => {
-  const [openFolder, setOpenFolder] = useState();
+  const [openFolder, setOpenFolder] = useState(0);
 
   const daily = useSelector(getDaily);
-  console.log(daily);
 
   const itemOpenHandler = (index) => {
     setOpenFolder(index);
@@ -35,25 +34,30 @@ const DailyForecast = () => {
       />
     ));
   } else {
-    dailyItem = <DailyForecastFull {...daily[openFolder + 1]} />;
+    dailyItem = <DailyForecastFull {...daily[openFolder - 1]} />;
   }
 
+  const cardProps = {
+    type: "8day",
+    classStyle: styles["daily-forecast"],
+    title: "8-day forecast",
+    placeholder: true,
+    structure: "main",
+  };
+
   return (
-    <div
-      className={`${styles["daily-forecast"]} ${globalStyles["grid-item"]} ${cardStyles.card} ${globalStyles["bg-blur"]}`}
-    >
-      <div className={`${cardStyles["card-placeholder"]} ${globalStyles.flex}`}>
-        <img id="image" src="/img/app_icons/8day.webp" />
-        <span>8 days forecast</span>
-      </div>
+    <Card {...cardProps}>
       {openFolder ? (
-        <a className={cardStyles["card-close"]} onClick={itemCloseHandler}>
+        <a
+          className={styles["daily-forecast-close"]}
+          onClick={itemCloseHandler}
+        >
           <img src="/img/app_icons/trinagle.svg" />
         </a>
       ) : null}
 
       <ul className={styles["daily-forecast-list"]}>{dailyItem}</ul>
-    </div>
+    </Card>
   );
 };
 

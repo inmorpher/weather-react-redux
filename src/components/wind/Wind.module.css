@@ -1,3 +1,6 @@
+.wind {
+  grid-area: wind;
+}
 .wind-image {
   position: relative;
   height: 150px;
@@ -5,7 +8,6 @@
 .wind-face {
   height: 100%;
   width: 100%;
-  -o-object-fit: contain;
   object-fit: contain;
 }
 .wind-arrow {
@@ -13,7 +15,6 @@
   top: 0;
   height: 100%;
   width: 100%;
-  -o-object-fit: contain;
   object-fit: contain;
 }
 

@@ -1,5 +1,7 @@
 import React from "react";
+
 import globalStyles from "../../../Global.module.css";
+
 const BackgroundLayout = () => {
   "sticky-frame bg-blur";
   return (

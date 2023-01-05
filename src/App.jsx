@@ -16,13 +16,19 @@ import Humidity from "./components/humidity/Humidity";
 import SunPosition from "./components/sun-position/SunPosition";
 import BackgroundLayout from "./components/UI/backgroundLayout/BackgroundLayout";
 import Loading from "./components/UI/loading/Loading";
+import Card from "./components/UI/card/Card";
 
 const App = () => {
   const dataStatus = useSelector((state) => state.weather.loading);
 
   let content;
 
-  if (dataStatus === "idle") content = <Search />;
+  if (dataStatus === "idle")
+    content = (
+      <Card>
+        <Search state={"idle"} />
+      </Card>
+    );
   if (dataStatus === "loading") content = <Loading />;
   if (dataStatus === "loaded") {
     content = (

@@ -1,26 +1,24 @@
-import React from "react";
-import { getHourly, getMeasurement } from "../../store/weatherDataSlice";
+import { getHourly } from "../../store/weatherDataSlice";
 import { useSelector } from "react-redux";
 
-import styles from "./Hourly.module.css";
-import globalStyles from "../../Global.module.css";
-import cardStyles from "../UI/card/Card.module.css";
-
 import HourlyItem from "./HourlyItem";
+import Card from "../UI/card/Card";
+
+import styles from "./Hourly.module.css";
 
 const Hourly = () => {
-  const hourly = useSelector(getHourly);
-  const measurement = useSelector(getMeasurement);
-  const timeOffset = useSelector((state) => state.weather.data.timezone_offset);
+  const { hourly, measurement, timeOffset } = useSelector(getHourly);
+
+  const cardProps = {
+    type: "hourly",
+    classStyle: styles["hourly-forecast"],
+    title: "hourly",
+    placeholder: true,
+    structure: "main",
+  };
   return (
-    <div
-      className={`${styles["hourly-forecast"]} ${globalStyles["grid-item"]} ${globalStyles["bg-blur"]}`}
-    >
-      <div className={`${cardStyles["card-placeholder"]} ${globalStyles.flex}`}>
-        <img src="/img/app_icons/hourly.webp" alt="hourly forecast" />
-        <span>hourly forecast</span>
-      </div>
-      <ul className={globalStyles.flex}>
+    <Card {...cardProps}>
+      <ul>
         {hourly.map((elem) => (
           <HourlyItem
             key={elem.dt}
@@ -30,7 +28,7 @@ const Hourly = () => {
           />
         ))}
       </ul>
-    </div>
+    </Card>
   );
 };
 

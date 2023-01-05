@@ -1,3 +1,6 @@
+.pressure {
+  grid-area: pressure;
+}
 .pressure-img {
   position: relative;
   height: 150px;

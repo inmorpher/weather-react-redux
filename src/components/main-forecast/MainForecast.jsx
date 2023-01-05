@@ -1,43 +1,42 @@
-import React from "react";
 import { useSelector } from "react-redux";
-import {
-  getCurrent,
-  getLocationGeneral,
-  getMeasurement,
-} from "../../store/weatherDataSlice";
-
-import styles from "./MainForecast.module.css";
-import globalStyles from "../../Global.module.css";
-import getTime from "../../func/getTime";
+import { getMain } from "../../store/weatherDataSlice";
 import { getMetricTemp } from "../../func/getMetricTemp";
 
+import getTime from "../../func/getTime";
+
+import Card from "../UI/card/Card";
+
+import styles from "./MainForecast.module.css";
 const MainForecast = () => {
-  const mainData = useSelector(getCurrent);
-  const locationName = useSelector(getLocationGeneral);
-  const measurement = useSelector(getMeasurement);
-  const timeOffset = useSelector((state) => state.weather.data.timezone_offset);
+  const { current, locationName, measurement, timeOffset } =
+    useSelector(getMain);
 
-  const currentDate = getTime(mainData.dt, "full", timeOffset);
-  const currentTemp = getMetricTemp(mainData.temp, measurement);
-  const currentIcon = `./img/weather_status/${mainData.weather[0].icon}.webp`;
-  const currentCondition = mainData.weather[0].main.toLowerCase();
+  const currentDate = getTime(current.dt, "full", timeOffset);
+  const currentTemp = getMetricTemp(current.temp, measurement);
+  const currentIcon = `./img/weather_status/${current.weather[0].icon}.webp`;
+  const currentCondition = current.weather[0].main.toLowerCase();
 
+  const cardProps = {
+    type: "",
+    classStyle: styles["main-forecast"],
+    title: "",
+    placeholder: false,
+    structure: "main",
+  };
   return (
-    <div
-      className={`${styles["main-forecast"]} ${globalStyles["grid-item"]} ${globalStyles["bg-blur"]} ${globalStyles.flex}`}
-    >
+    <Card {...cardProps}>
       <div className={styles["main-forecast-location"]}>
         <span className={styles["main-forecast-city-name"]}>
           {locationName}
         </span>
         <span>{currentDate}</span>
       </div>
-      <img src={currentIcon} alt="" />
+      <img src={currentIcon} alt={currentCondition} />
       <div className={styles["main-forecast-degree"]}>
         <span>{currentTemp}</span>
         <span>{currentCondition}</span>
       </div>
-    </div>
+    </Card>
   );
 };
 

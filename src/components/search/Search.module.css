@@ -1,23 +1,18 @@
 .search {
   grid-area: search;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
   align-items: end;
   z-index: 100;
 }
 .search form {
   position: relative;
   width: 75%;
+}
+
+.search form input,
+button {
 }
 .search form input {
   padding: 5px 50px;
@@ -29,24 +24,9 @@
   border: 1px solid var(--main-color);
   background: var(--gradient-bg);
   border-radius: 10px;
-  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
 }
-.search form input::-webkit-input-placeholder {
-  color: var(--non-active-color);
-}
-.search form input::-moz-placeholder {
-  color: var(--non-active-color);
-}
-.search form input:-ms-input-placeholder {
-  color: var(--non-active-color);
-}
-.search form input::-ms-input-placeholder {
-  color: var(--non-active-color);
-}
-.search form input::placeholder {
-  color: var(--non-active-color);
-}
+
 .search form button {
   width: 50px;
   height: 40px;
@@ -64,6 +44,31 @@
   right: 0;
   background: url("../img/app_icons/search.webp");
   background-size: 50%;
+}
+
+.search-idle {
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.search-idle form {
+  width: 90%;
+}
+
+.search a {
+  text-decoration: none;
+  color: var(--non-active-color);
+  border-radius: 8px;
+  padding: 0 10px;
+}
+.search a.active {
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+.search a:hover {
+  color: var(--main-color);
 }
 @media screen and (max-width: 768px) {
   .search {

@@ -1,12 +1,12 @@
-import React from "react";
-import styles from "./Uv.module.css";
-import globalStyles from "../../Global.module.css";
-import cardStyles from "../UI/card/Card.module.css";
 import { useSelector } from "react-redux";
 import { getUv } from "../../store/weatherDataSlice";
 
+import Card from "../UI/card/Card";
+
+import styles from "./Uv.module.css";
+
 const Uv = () => {
-  const uvi = Math.ceil(useSelector(getUv));
+  const uvi = useSelector(getUv);
 
   const uvGrade = [
     { color: "transparent", value: "none" },
@@ -21,30 +21,28 @@ const Uv = () => {
     { color: "#E00065", value: "very high" },
     { color: "#E00090", value: "very high" },
   ];
-
+  const cardProps = {
+    type: "uv",
+    classStyle: styles["uv-index"],
+    title: "uv-index",
+    placeholder: true,
+    structure: "column",
+  };
   return (
-    <div
-      className={`${styles["uv-index"]} ${globalStyles["grid-item"]} ${cardStyles.card} ${globalStyles["bg-blur"]}`}
-    >
-      <div className={`${cardStyles["card-placeholder"]} ${globalStyles.flex}`}>
-        <img id="image" src="/img/app_icons/uv.webp" />
-        <span>UV index</span>
-      </div>
-      <div className={`${cardStyles["card-content"]} ${globalStyles.flex}`}>
-        <div></div>
-        <div>
-          <div
-            className={styles["uv-index-scale"]}
-            style={{ backgroundColor: uvGrade[uvi].color }}
-          >
-            <span>{uvi}</span>
-          </div>
-        </div>
-        <div>
-          <span>{uvGrade[uvi].value}</span>
+    <Card {...cardProps}>
+      <div></div>
+      <div>
+        <div
+          className={styles["uv-index-scale"]}
+          style={{ backgroundColor: uvGrade[uvi].color }}
+        >
+          <span>{uvi}</span>
         </div>
       </div>
-    </div>
+      <div>
+        <span>{uvGrade[uvi].value}</span>
+      </div>
+    </Card>
   );
 };
 

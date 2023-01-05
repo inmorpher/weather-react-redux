@@ -1,3 +1,6 @@
+.uv-index {
+  grid-area: uv-index;
+}
 .uv-index-scale {
   position: relative;
   width: 150px;

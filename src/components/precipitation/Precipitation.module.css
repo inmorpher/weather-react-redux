@@ -1,5 +1,6 @@
 .precipitation {
   position: relative;
+  grid-area: precipitation;
 }
 
 .precipitation canvas {

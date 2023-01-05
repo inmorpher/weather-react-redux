@@ -7,52 +7,6 @@
   grid-template-areas: "main-weather-forecast main-weather-forecast search search" "hourly-forecast hourly-forecast hourly-forecast hourly-forecast" "precipitation precipitation wind feeling" "daily-forecast daily-forecast uv-index pressure" "daily-forecast daily-forecast humidity sun-position";
 }
 
-.grid-item:nth-child(1) {
-  grid-area: main-weather-forecast;
-}
-.grid-item:nth-child(2) {
-  grid-area: search;
-}
-.grid-item:nth-child(3) {
-  grid-area: hourly-forecast;
-}
-.grid-item:nth-child(4) {
-  grid-area: precipitation;
-}
-.grid-item:nth-child(5) {
-  grid-area: wind;
-}
-.grid-item:nth-child(6) {
-  grid-area: feeling;
-}
-.grid-item:nth-child(7) {
-  grid-area: daily-forecast;
-}
-.grid-item:nth-child(8) {
-  grid-area: humidity;
-}
-.grid-item:nth-child(9) {
-  grid-area: sun-position;
-}
-
-.test {
-  border: 1px dotted red;
-}
-
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.bg-blur {
-  border: 1px solid var(--main-color);
-  background: var(--gradient-bg);
-  border-radius: 10px;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-}
-
 .bg-grad {
   position: fixed;
   display: -webkit-box;

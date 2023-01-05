@@ -3,8 +3,8 @@ import { useRef } from "react";
 import { useSelector } from "react-redux";
 import { getPrecipitation } from "../../store/weatherDataSlice";
 import styles from "./Precipitation.module.css";
-import globalStyles from "../../Global.module.css";
-import cardStyles from "../UI/card/Card.module.css";
+
+import Card from "../UI/card/Card";
 
 const Precipitation = () => {
   const canvasId = useRef();
@@ -365,21 +365,18 @@ const Precipitation = () => {
     if (!data) noData = <p>no precipitation data</p>;
   }, []);
 
+  const cardProps = {
+    type: "precipitation",
+    classStyle: styles.precipitation,
+    title: "precipitation",
+    placeholder: true,
+    structure: "main",
+  };
   return (
-    <>
-      <div
-        className={`${styles.precipitation} ${globalStyles["grid-item"]} ${globalStyles["bg-blur"]} ${cardStyles.card}`}
-      >
-        <div
-          className={`${cardStyles["card-placeholder"]} ${globalStyles.flex}`}
-        >
-          <img id="image" src="/img/app_icons/precipitation.webp" />
-          <span>precipitation next hour</span>
-        </div>
-        <canvas ref={canvasId}></canvas>
-        {!data && <p className={styles["no-data"]}>no precipitation data</p>}
-      </div>
-    </>
+    <Card {...cardProps}>
+      <canvas ref={canvasId} />
+      {!data && <p className={styles["no-data"]}>no precipitation data</p>}
+    </Card>
   );
 };
 

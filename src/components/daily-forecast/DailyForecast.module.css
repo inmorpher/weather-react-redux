@@ -1,15 +1,13 @@
+.daily-forecast {
+  grid-area: daily-forecast;
+}
 .daily-forecast-list {
   height: 100%;
-  padding: 15px;
+  padding: 40px 15px 15px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   gap: 10px;
 }
@@ -18,11 +16,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
 }
@@ -32,7 +26,6 @@
 .daily-forecast-icon {
   width: 40px;
   height: 40px;
-  -o-object-fit: contain;
   object-fit: contain;
 }
 .daily-forecast-degree {
@@ -40,12 +33,7 @@
 }
 .daily-forecast-more {
   height: 100%;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 .daily-forecast-more table th:nth-child(1),
@@ -53,15 +41,13 @@
   color: var(--non-active-color);
 }
 .daily-forecast .weather {
-  -ms-flex-pack: distribute;
   justify-content: space-around;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 .daily-forecast .weather img {
   width: 75px;
   height: 75px;
+  object-fit: contain;
 }
 .daily-forecast .weather-condition {
   text-align: left;
@@ -70,10 +56,7 @@
   color: var(--non-active-color);
 }
 .daily-forecast .conditions {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   vertical-align: middle;
   gap: 15px;
@@ -83,6 +66,19 @@
   opacity: 0.5;
   height: 12px;
   margin-right: 5px;
+}
+
+.daily-forecast-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  width: 80px;
+  padding: 10px 0;
+}
+.daily-forecast-close img {
+  margin: 0 auto;
+  transform: rotate(180deg);
 }
 
 @media screen and (max-width: 768px) {

@@ -32,16 +32,21 @@
   margin: 0;
   padding: 0;
 }
-
 body {
   min-height: 100vh;
-  background: rgb(23, 0, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(23, 0, 255, 1) 0%,
+    rgba(255, 169, 0, 1) 100%
+  );
   min-height: -webkit-fill-available;
   font-family: var(--font-regular);
   color: var(--main-color);
   font-size: 1rem;
   letter-spacing: 2px;
   text-align: center;
+  transition: 1s all ease-in;
+  overflow: auto;
 }
 
 img,
@@ -75,18 +80,4 @@ button {
 
 span {
   display: block;
-}
-
-a {
-  text-decoration: none;
-  color: var(--non-active-color);
-  border-radius: 8px;
-  padding: 0 10px;
-}
-a.active {
-  color: var(--main-color);
-  border: 1px solid var(--main-color);
-}
-a:hover {
-  color: var(--main-color);
 }
