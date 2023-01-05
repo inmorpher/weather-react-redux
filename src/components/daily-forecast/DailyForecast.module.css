@@ -33,6 +33,7 @@
 }
 .daily-forecast-more {
   height: 100%;
+  display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
@@ -41,8 +42,11 @@
   color: var(--non-active-color);
 }
 .daily-forecast .weather {
+  display: flex;
   justify-content: space-around;
   align-items: center;
+  text-align: left;
+  gap: 40px;
 }
 .daily-forecast .weather img {
   width: 75px;

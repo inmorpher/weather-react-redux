@@ -1,0 +1,18 @@
+.sticky-frame {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .sticky-frame {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    z-index: 90;
+    height: 160px;
+    background: var(--gradient-bg);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--main-color);
+    border-radius: 0;
+  }
+}

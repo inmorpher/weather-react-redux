@@ -32,8 +32,14 @@
   margin: 0;
   padding: 0;
 }
+html {
+  overflow: hidden;
+  height: 100%;
+  scroll-behavior: smooth;
+}
 body {
-  min-height: 100vh;
+  height: 100%;
+  overflow: auto;
   background: linear-gradient(
     180deg,
     rgba(23, 0, 255, 1) 0%,

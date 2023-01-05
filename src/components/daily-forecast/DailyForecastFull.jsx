@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./DailyForecast.module.css";
-import globalStyles from "../../Global.module.css";
+// import globalStyles from "../../Global.module.css";
 import { useSelector } from "react-redux";
 import getTime from "../../func/getTime";
 import { getMetricTemp } from "../../func/getMetricTemp";
@@ -28,11 +28,11 @@ const DailyForecastFull = (props) => {
   ];
   return (
     <>
-      <div className={`${styles["daily-forecast-more"]} ${globalStyles.flex}`}>
+      <div className={styles["daily-forecast-more"]}>
         <span className={styles["date"]}>
           {getTime(props.dt, "data", timeOffset)}
         </span>
-        <div className={`${styles["weather"]} ${globalStyles.flex}`}>
+        <div className={styles["weather"]}>
           <img
             src={`/img/weather_status/${props.weather[0].icon}.webp`}
             alt="weather"
@@ -49,7 +49,7 @@ const DailyForecastFull = (props) => {
             </span>
           </div>
         </div>
-        <div className={`${styles.conditions} ${globalStyles.flex}`}>
+        <div className={styles.conditions}>
           <span className={styles["conditions-humidity"]}>
             <img src="/img/app_icons/humidity.webp" alt="humidity" />
             humidity: {props.humidity}%

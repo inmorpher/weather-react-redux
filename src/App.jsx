@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchWeather } from "./store/weatherDataSlice";
+import { useSelector } from "react-redux";
 
 import GridWrapper from "./components/UI/grid/GridWrapper";
 import MainForecast from "./components/main-forecast/MainForecast";
@@ -14,7 +13,7 @@ import Uv from "./components/uv/Uv";
 import Pressure from "./components/pressure/Pressure";
 import Humidity from "./components/humidity/Humidity";
 import SunPosition from "./components/sun-position/SunPosition";
-import BackgroundLayout from "./components/UI/backgroundLayout/BackgroundLayout";
+import StickyFrame from "./components/UI/stickyFrame/StickyFrame";
 import Loading from "./components/UI/loading/Loading";
 import Card from "./components/UI/card/Card";
 
@@ -33,7 +32,7 @@ const App = () => {
   if (dataStatus === "loaded") {
     content = (
       <>
-        <BackgroundLayout />
+        <StickyFrame />
         <GridWrapper>
           <MainForecast />
           <Search />

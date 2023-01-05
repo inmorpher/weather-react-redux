@@ -72,8 +72,9 @@ button {
 }
 @media screen and (max-width: 768px) {
   .search {
+    width: 95%;
     font-size: 0.6rem;
-    position: sticky;
+    position: fixed;
     top: 10px;
   }
   .search form {

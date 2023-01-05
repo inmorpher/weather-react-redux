@@ -1,0 +1,21 @@
+.content-grid {
+  margin: 15px auto;
+  width: 1154px;
+  display: grid;
+  grid-auto-columns: 1fr;
+  gap: 2rem;
+  grid-template-areas: "main-weather-forecast main-weather-forecast search search" "hourly-forecast hourly-forecast hourly-forecast hourly-forecast" "precipitation precipitation wind feeling" "daily-forecast daily-forecast uv-index pressure" "daily-forecast daily-forecast humidity sun-position";
+}
+
+@media screen and (max-width: 1154px) {
+  .content-grid {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .content-grid {
+    margin: 170px auto 30px auto;
+    gap: 1rem;
+    grid-template-areas: "hourly-forecast hourly-forecast" "precipitation precipitation" "daily-forecast daily-forecast" "wind feeling" "uv-index pressure" "humidity sun-position";
+  }
+}

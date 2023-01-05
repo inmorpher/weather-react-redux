@@ -33,7 +33,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .card {
+  .card-content {
     min-height: 200px;
   }
 }
