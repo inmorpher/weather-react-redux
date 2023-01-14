@@ -5,6 +5,7 @@ export class CanvasWeather {
     this.canvas.height = window.innerHeight;
     this.context;
     this.particles = [];
+    this.animationFrame;
   }
   canvasInit() {
     this.context = this.canvas.getContext("2d");
@@ -20,6 +21,7 @@ export class CanvasWeather {
 
   reset() {
     window.removeEventListener("resize", this.resizeHandlerBind);
+    cancelAnimationFrame(this.animationFrame);
   }
 
   start() {

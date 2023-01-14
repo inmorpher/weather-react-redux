@@ -43,7 +43,8 @@ export class RainBg extends CanvasWeather {
   #rainAnimate() {
     this.#drawRain();
     this.#updateRain();
-    requestAnimationFrame(() => {
+    console.log("rain");
+    this.animationFrame = requestAnimationFrame(() => {
       this.#rainAnimate();
     });
   }
