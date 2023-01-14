@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import GridWrapper from "./components/UI/grid/GridWrapper";
@@ -16,6 +15,7 @@ import SunPosition from "./components/sun-position/SunPosition";
 import StickyFrame from "./components/UI/stickyFrame/StickyFrame";
 import Loading from "./components/UI/loading/Loading";
 import Card from "./components/UI/card/Card";
+import DimanicBackground from "./components/UI/dinamic_background/DimanicBackground";
 
 const App = () => {
   const dataStatus = useSelector((state) => state.weather.loading);
@@ -32,6 +32,7 @@ const App = () => {
   if (dataStatus === "loaded") {
     content = (
       <>
+        <DimanicBackground />
         <StickyFrame />
         <GridWrapper>
           <MainForecast />

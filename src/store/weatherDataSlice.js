@@ -48,13 +48,21 @@ export const weatherDataSlice = createSlice({
       state.data = action.payload;
       state.error = "";
       state.loading = "loaded";
-      document.body.style.backgroundColor =
-        "linear-gradient(180deg, rgba(23,0,255,1) 0%, rgba(255,57,0,1) 100%)";
     });
   },
 });
 // Actions
-
+export const getDynamicWeather = (state) => {
+  return {
+    sunrise:
+      state.weather.data.current.sunrise + state.weather.data.timezone_offset,
+    sunset:
+      state.weather.data.current.sunset + state.weather.data.timezone_offset,
+    time: state.weather.data.current.dt + state.weather.data.timezone_offset,
+    clouds: state.weather.data.current.clouds,
+    condition: state.weather.data.current.weather[0].id,
+  };
+};
 export const getMeasurement = (state) => state.weather.measurement;
 /* 
   Getting:

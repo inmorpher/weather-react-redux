@@ -40,11 +40,6 @@ html {
 body {
   height: 100%;
   overflow: auto;
-  background: linear-gradient(
-    180deg,
-    rgba(23, 0, 255, 1) 0%,
-    rgba(255, 169, 0, 1) 100%
-  );
   min-height: -webkit-fill-available;
   font-family: var(--font-regular);
   color: var(--main-color);

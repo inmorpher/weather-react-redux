@@ -1,12 +1,14 @@
 import React from "react";
-import styles from "./DailyForecast.module.css";
-// import globalStyles from "../../Global.module.css";
+
 import { useSelector } from "react-redux";
-import getTime from "../../func/getTime";
 import { getMetricTemp } from "../../func/getMetricTemp";
 import { getMeasurement } from "../../store/weatherDataSlice";
 import { getMetricWind } from "../../func/getMetricWind";
 import { getWindDirection } from "../../func/getWindDirection";
+
+import getTime from "../../func/getTime";
+
+import styles from "./DailyForecast.module.css";
 
 const DailyForecastFull = (props) => {
   const timeOffset = useSelector((state) => state.weather.data.timezone_offset);

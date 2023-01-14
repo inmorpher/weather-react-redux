@@ -9,7 +9,6 @@ import {
 } from "../../store/weatherDataSlice";
 
 const Search = (props) => {
-  console.log(props.state === "idle");
   const dispatch = useDispatch();
   const measurement = useSelector(getMeasurement);
 

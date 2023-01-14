@@ -15,7 +15,6 @@ const Card = ({
     </div>
   );
 
-  console.log(structure);
   return (
     <div className={`${styles.card} ${classStyle}`}>
       {placeholder ? placeholderContent : null}
