@@ -60,7 +60,6 @@ export class SnowBg extends CanvasWeather {
   snowAnimate() {
     this.#drawSnow();
     this.#updateSnow();
-    console.log("snow");
     this.animationFrame = requestAnimationFrame(() => this.snowAnimate());
   }
   #init() {

@@ -17,21 +17,30 @@ const DimanicBackground = () => {
 
   useEffect(() => {
     let weatherEffect;
-    if (measurement === "metric") weatherEffect = new SnowBg(canvas.current);
-    if (measurement === "imperial")
+    if (condition >= 600 && condition <= 622) {
+      weatherEffect = new SnowBg(canvas.current);
+      weatherEffect.start();
+    } else if (condition >= 500 && condition <= 531) {
       weatherEffect = new RainBg(canvas.current, "100");
-    weatherEffect.start();
+      weatherEffect.start();
+    }
     return () => {
-      weatherEffect.reset();
+      weatherEffect && weatherEffect.reset();
     };
-  }, [measurement]);
+  }, [condition]);
   let bgStyles;
-  if (time < sunrise || time > sunset) {
+  if ((clouds < 50 && time < sunrise) || (clouds < 50 && time > sunset)) {
     bgStyles = `${styles["night-time"]}`;
     document.body.style.backgroundColor = "#1e2b58";
-  } else if (time > sunrise && time < sunset) {
+  } else if (clouds < 50 && time > sunrise && time < sunset) {
     bgStyles = `${styles["day-time"]}`;
     document.body.style.backgroundColor = "#024996";
+  } else if (clouds < 50 || (condition >= 500 && condition <= 622)) {
+    bgStyles = `${styles["full-clouds"]}`;
+    document.body.style.backgroundColor = "#3c5369";
+  } else {
+    bgStyles = `${styles["full-clouds"]}`;
+    document.body.style.backgroundColor = "#3c5369";
   }
   return (
     <div className={`${styles["dinamic-background"]} ${bgStyles}`}>
